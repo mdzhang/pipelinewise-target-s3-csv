@@ -16,8 +16,6 @@ def validate_config(config):
     """Validates config"""
     errors = []
     required_config_keys = [
-        'aws_access_key_id',
-        'aws_secret_access_key',
         's3_bucket'
     ]
 

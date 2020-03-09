@@ -63,8 +63,8 @@ Full list of options in `config.json`:
 
 | Property                            | Type    | Required?  | Description                                                   |
 | -------------------------------------|---------|------------|---------------------------------------------------------------|
-| aws_access_key_id                   | String  | Yes        | S3 Access Key Id                                              |
-| aws_secret_access_key               | String  | Yes        | S3 Secret Access Key                                          |
+| aws_access_key_id                   | String  | No         | S3 Access Key Id                                              |
+| aws_secret_access_key               | String  | No         | S3 Secret Access Key                                          |
 | aws_session_token                   | String  | No         | S3 Session Token                                              |
 | aws_region                          | String  | No         | AWS Region                                                    |
 | s3_bucket                           | String  | Yes        | S3 Bucket name                                                |
