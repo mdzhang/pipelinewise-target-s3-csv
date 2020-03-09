@@ -62,11 +62,13 @@ Running the the target connector requires a `config.json` file. An example with 
 Full list of options in `config.json`:
 
 | Property                            | Type    | Required?  | Description                                                   |
-|-------------------------------------|---------|------------|---------------------------------------------------------------|
+| -------------------------------------|---------|------------|---------------------------------------------------------------|
 | aws_access_key_id                   | String  | Yes        | S3 Access Key Id                                              |
 | aws_secret_access_key               | String  | Yes        | S3 Secret Access Key                                          |
+| aws_session_token                   | String  | No         | S3 Session Token                                              |
+| aws_region                          | String  | No         | AWS Region                                                    |
 | s3_bucket                           | String  | Yes        | S3 Bucket name                                                |
-| s3_key_prefix                       | String  |            | (Default: None) A static prefix before the generated S3 key names. Using prefixes you can 
+| s3_key_prefix                       | String  |            | (Default: None) A static prefix before the generated S3 key names. |
 | delimiter                           | String  |            | (Default: ',') A one-character string used to separate fields. |
 | quotechar                           | String  |            | (Default: '"') A one-character string used to quote fields containing special characters, such as the delimiter or quotechar, or which contain new-line characters. |
 | add_metadata_columns                | Boolean |            | (Default: False) Metadata columns add extra row level information about data ingestions, (i.e. when was the row read in source, when was inserted or deleted in snowflake etc.) Metadata columns are creating automatically by adding extra columns to the tables with a column prefix `_SDC_`. The column names are following the stitch naming conventions documented at https://www.stitchdata.com/docs/data-structure/integration-schemas#sdc-columns. Enabling metadata columns will flag the deleted rows by setting the `_SDC_DELETED_AT` metadata column. Without the `add_metadata_columns` option the deleted rows from singer taps will not be recongisable in Snowflake. |
