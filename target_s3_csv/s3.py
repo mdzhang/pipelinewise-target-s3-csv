@@ -25,8 +25,8 @@ def log_backoff_attempt(details):
 
 @retry_pattern()
 def setup_aws_client(config):
-    aws_access_key_id = config['aws_access_key_id']
-    aws_secret_access_key = config['aws_secret_access_key']
+    aws_access_key_id = config.get('aws_access_key_id')
+    aws_secret_access_key = config.get('aws_secret_access_key')
     aws_session_token = config.get('aws_session_token')
     region_name = config.get('aws_region')
 
